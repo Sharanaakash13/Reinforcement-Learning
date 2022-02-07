@@ -8,6 +8,4 @@ The agent is trained in virtual environment
 Simulator : Webots Simulators 
 Bot in Simulator : Custom Bot
 
-Pretrained Q-table is used to drive the bot in real environment.
-
-Project still in progress .....
+Pretrained Q-table is used to drive the bot in real time with exact simulation environment.
