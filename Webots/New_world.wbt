@@ -1,0 +1,187 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 1 0 0 4.71238898038469
+  position 5.897730119724943e-17 14.5069228618443 -9.405107569241065e-16
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0 -0.05 0
+  floorSize 1 8
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+  wallHeight 0.3
+}
+DEF MY_ROBOT Robot {
+  translation -0.022164904446881392 0.022753360478605385 3.3858463715655707
+  children [
+    DEF Body Transform {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.19 0.122 0.365
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -285.1143937605621
+        anchor 0.1 -0.05 -0.182
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.10000073233836235 -0.050008541996204844 -0.18196457220728324
+        rotation -0.6700834417493469 0.6695514275127077 0.32045134889565496 2.5208940569540452
+        scale 2 2 2
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        name "solid(4)"
+        boundingObject USE wheel
+        physics DEF wheel_physics Physics {
+          centerOfMass [
+            0 0 0
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 193.76332157587765
+        anchor -0.1 -0.05 -0.1825
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.09999943589011762 -0.0500180259599356 -0.18251845159878868
+        rotation 0.3968866414168023 -0.39657407248374105 -0.8277741231148452 4.525279575392257
+        scale 2 2 2
+        children [
+          USE wheel
+        ]
+        name "solid(1)"
+        boundingObject USE wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 285
+        anchor 0.1 -0.05 0.18
+      }
+      device [
+        RotationalMotor {
+          name "motor_3"
+        }
+      ]
+      endPoint Solid {
+        translation 0.100001 -0.05 0.18
+        rotation 0.6805834628797836 -0.680038236004198 0.27267956950762 2.60878238222313
+        scale 2 2 2
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE wheel
+        physics DEF wheel_physics Physics {
+          centerOfMass [
+            0 0 0
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -194
+        anchor -0.1 -0.05 0.18
+      }
+      device [
+        RotationalMotor {
+          name "motor_4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.1 -0.05 0.18
+        rotation -0.3993540745866197 0.39902905751843876 -0.8254042248298775 4.52245730138
+        scale 2 2 2
+        children [
+          USE wheel
+        ]
+        name "solid(3)"
+        boundingObject USE wheel
+        physics USE wheel_physics
+      }
+    }
+    DistanceSensor {
+      translation 3.98434e-05 0.05 -0.1825
+      rotation 0 1 0 1.57
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.02 0.03
+          }
+        }
+      ]
+      name "UltrasonicSensor"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+      lookupTable [
+        0.02 0.02 0.1
+        4 4 0
+      ]
+      numberOfRays 2
+      aperture 0.26
+      resolution 5e-05
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "my_controller1"
+  supervisor TRUE
+}
