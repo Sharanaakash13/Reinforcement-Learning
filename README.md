@@ -1,14 +1,16 @@
 # Reinforcement-Learning
 This project is all about planning a path using Reinforcement Learning. 
 
-This project involves three modules
-* Reinforcement learning algorithm
-* Ultra-sonic sensor module - Input sensor to detect obstacle
-* Micro-controller module - Ardunio
+This project involves three modules:
+* Reinforcement learning algorithm.
+* Sensor module - Finds distance between the obstacle.
+* Micro-controller module - Helps to maneuver the smart car using Ardunio.
 
 
 ### Description of the Reinforcement learning script
-* The python script is an implementation of reinforcement learning, specifically Q-learning, for a smart car. The car has an ultrasonic sensor to detect obstacles, and it can take three actions: go straight, turn left, or turn right. The code uses the gym library to define the observation and action spaces. The smart car class contains the following methods:
+The python script is an implementation of reinforcement learning, specifically Q-learning, for a smart car. The car has an ultrasonic sensor to detect obstacles, and it can take three actions: go straight, turn left, or turn right. The code uses the gym library to define the observation and action spaces. 
+
+The smart car class contains the following methods:
 
 * **__init__(self)**: initializes the smart car object and the ultrasonic sensor module.
 * **get_observations(self)**: reads the current distance from the ultrasonic sensor and returns it.
@@ -23,3 +25,11 @@ This project involves three modules
 * It initializes the Q-table randomly and then rewrite the Q-table as it learns by itself. 
 * The training loop iterates over the specified number of episodes, applies the Q-learning algorithm to update the Q-table, and saves the updated Q-table at the end of each episode. 
 * Finally the exploration rate starts high and decays linearly until the end of the training.
+
+### Description of the Sensor module script
+* The code defines a class called "FindDistance" that uses an ultrasonic sensor to measure distance.
+* The class constructor initializes the GPIO pins used for the sensor, as well as some constants used for distance calculation.
+* The class method "get_distance" triggers a pulse from the sensor and measures the time it takes for the pulse to be echoed back to the sensor. This time is used to calculate the distance between the sensor and the object reflecting the pulse. 
+* The calculated distance is returned by the method, after being filtered to ensure that it falls within a specified range of minimum and maximum distances. 
+* This code requires the numpy and Jetson.GPIO libraries to be installed, and must be run on a device that supports these libraries and has an ultrasonic sensor connected to its GPIO pins.
+
