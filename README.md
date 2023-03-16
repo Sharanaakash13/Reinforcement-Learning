@@ -3,19 +3,12 @@ This project is all about planning a path using Reinforcement Learning.
 
 This project involves three modules
 * Reinforcement learning algorithm
-* Ultra-sonic sensor module 
-* Micro-controller module 
+* Ultra-sonic sensor module - Input sensor to detect obstacle
+* Micro-controller module - Ardunio
 
-Q-Learning reinforcement learning algorithm is used which updates the Q-table 
-
-The algorithm is trained in virtual environment by the Simulator called Webots Simulator. 
-
-Pretrained Q-table is used to drive the bot in real time with exact simulation environment.
 
 ### Description of the Reinforcement learning script
-* The python script is an implementation of reinforcement learning, specifically Q-learning, for a smart car. 
-* The car has an ultrasonic sensor to detect obstacles, and it can take three actions: go straight, turn left, or turn right. 
-* The code uses the gym library to define the observation and action spaces. The smart car class contains the following methods:
+* The python script is an implementation of reinforcement learning, specifically Q-learning, for a smart car. The car has an ultrasonic sensor to detect obstacles, and it can take three actions: go straight, turn left, or turn right. The code uses the gym library to define the observation and action spaces. The smart car class contains the following methods:
 
 * **__init__(self)**: initializes the smart car object and the ultrasonic sensor module.
 * **get_observations(self)**: reads the current distance from the ultrasonic sensor and returns it.
