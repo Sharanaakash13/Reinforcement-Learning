@@ -38,11 +38,10 @@ The smart car class contains the following methods:
 * The code reads incoming signals from a serial monitor to determine the direction of steering and wheel rotation.
 
 * The pins for the BTS7960 motor driver are defined as follows:
-
-*Tabspace* -  **RPWM**: pin 3 for the right motor PWM output
-- &nbsp; **R_EN**: pin 4 for the right motor enable input
-&nbsp; **R_IS**: pin 5 for the right motor current sensing output
-&nbsp; **LPWM**: pin 6 for the left motor PWM output
+      -  **RPWM**: pin 3 for the right motor PWM output
+-  **R_EN**: pin 4 for the right motor enable input
+-  **R_IS**: pin 5 for the right motor current sensing output
+- **LPWM**: pin 6 for the left motor PWM output
 &nbsp; **L_EN**: pin 7 for the left motor enable input
 &nbsp; **L_IS**: pin 8 for the left motor current sensing output
 * The values for clockwise (CW) and counter-clockwise (CCW) rotation are also defined. Additionally, the debug variable is defined to display information on the Serial connection (USB).
