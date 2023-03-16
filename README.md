@@ -39,8 +39,8 @@ The smart car class contains the following methods:
 
 * The pins for the BTS7960 motor driver are defined as follows:
 
-&nbsp; **RPWM**: pin 3 for the right motor PWM output
-&nbsp; **R_EN**: pin 4 for the right motor enable input
+- &nbsp; **RPWM**: pin 3 for the right motor PWM output
+- &nbsp; **R_EN**: pin 4 for the right motor enable input
 &nbsp; **R_IS**: pin 5 for the right motor current sensing output
 &nbsp; **LPWM**: pin 6 for the left motor PWM output
 &nbsp; **L_EN**: pin 7 for the left motor enable input
