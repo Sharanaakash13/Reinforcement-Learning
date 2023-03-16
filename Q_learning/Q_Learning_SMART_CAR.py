@@ -202,6 +202,4 @@ for episode in range(0, episodes):
 
 print('Final q table :/n{}'.format(q_table))
 
-#Reference: https://stackoverflow.com/questions/28439701/how-to-save-and-load-numpy-array-data-properly
-
 
