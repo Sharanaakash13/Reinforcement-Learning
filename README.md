@@ -45,7 +45,7 @@ The pins for the BTS7960 motor driver are defined as follows:
 - **LPWM**: pin 6 for the left motor PWM output
 - **L_EN**: pin 7 for the left motor enable input
 - **L_IS**: pin 8 for the left motor current sensing output
-- 
+
 * The values for clockwise (CW) and counter-clockwise (CCW) rotation are also defined. Additionally, the debug variable is defined to display information on the Serial connection (USB).
 
 * The code uses the Servo library to control the position of the steering servo motor. The Servo library is used to attach the servo to pin 9, and to set the initial position of the servo to 90 degrees.
